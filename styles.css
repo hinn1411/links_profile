@@ -1,9 +1,20 @@
+:root {
+  --main-bg-color: hsl(0, 0%, 8%);
+  --main-container-color: hsl(0, 0%, 12%);
+  --text-color: hsl(0, 0%, 100%);
+  --primary-text-color: hsl(75, 94%, 57%);
+  --main-button-color: hsl(0, 0%, 20%);
+  --font-thin: 400;
+  --font-normal: 600;
+  --font-bold: 700;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Inter";
-  color: white;
+  color: var(--text-color);
 }
 
 /* - White: hsl(0, 0%, 100%)
@@ -16,19 +27,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hsl(0, 0%, 8%);
+  background-color: var(--main-bg-color);
 }
 
 p {
   /* 14px */
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: var(--font-normal);
 }
 
 main {
   width: 375px;
   height: 600px;
-  background-color: hsl(0, 0%, 12%);
+  background-color: var(--main-container-color);
   padding: 40px 40px;
   border-radius: 10px;
   display: flex;
@@ -43,7 +54,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
 
 }
 
@@ -56,20 +66,19 @@ main {
 .main-image_container>h1 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: hsl(0, 0%, 100%);
   margin-top: 30px;
 }
 
 .main-image_container>p {
   margin-top: 15px;
   font-weight: 700;
-  color: hsl(75, 94%, 57%)
+  color: var(--primary-text-color);
 }
 
 /* Description */
 
 #description {
-  font-weight: 400;
+  font-weight: var(--font-thin);
   font-size: 0.813rem;
   text-align: center;
 }
@@ -77,19 +86,31 @@ main {
 
 /* Buttons part */
 
-.main-buttons_container > *:not(:first-child) {
+.main-links_container {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-links_container>*:not(:first-child) {
   margin-top: 10px;
 }
 
-.main-buttons_container > p {
-  background-color: hsl(0, 0%, 20%);
+.main-links_container>li {
+  background-color: var(--main-button-color);
   text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
   padding: 15px 0px;
   border-radius: 6px;
 }
 
-.main-buttons_container>p:hover {
-  background-color: hsl(75, 94%, 57%);
+.main-links_container a {
+  text-decoration: none;
+}
+
+.main-links_container>li:hover {
+  background-color: var(--primary-text-color);
   color: hsl(0, 0%, 8%);
   cursor: url(./assets/images/handcursor.svg), auto;
 }
